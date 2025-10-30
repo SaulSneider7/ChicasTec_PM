@@ -6,10 +6,14 @@ function ListarUsuario() {
 
     const [usuarios, setUsuarios] = useState([]);
 
+    // constantes para editar un usuario
     const [editandoID, setEditandoID] = useState(null);
     const [nombreEditado, setNombreEditado] = useState("");
     const [edadEditada, setEdadEditada] = useState("");
 
+    //================================================
+    // Funcion para editar los usuarios
+    //================================================
     const editarUsuario = async (id) => {
         const usuarioRef = doc(db, "usuarios", id);
         await updateDoc(usuarioRef, {
@@ -40,7 +44,18 @@ function ListarUsuario() {
             <h2>Lista de los usuarios</h2>
             <ul>
                 {usuarios.map((usuario)=>(
-                    <li key={usuario.id}>{usuario.nombre} - {usuario.edad}</li>
+                    <li key={usuario.id}>
+                        {editandoID == usuario.id ? (
+                            <>
+                            
+                            </>
+                        ):(
+                            <>
+                            
+                            </>
+                        )}
+                        {usuario.nombre} - {usuario.edad}
+                    </li>
                 ))}
                 
             </ul>
