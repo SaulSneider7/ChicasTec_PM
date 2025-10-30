@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import app from './firebase'
 import AgregarUsuario from './componentes/AgregarUsuario'
+import ListarUsuario from './componentes/ListarUsuario'
 
 function App() {
   console.log(app);
@@ -15,6 +16,10 @@ function App() {
       </div>      
       
       <AgregarUsuario />
+
+      <hr />
+
+      <ListarUsuario />
       
     </>
   )

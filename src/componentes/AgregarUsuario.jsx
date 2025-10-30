@@ -6,6 +6,7 @@ function AgregarUsuario() {
     const [nombre, setNombre] = useState("");
     const [edad, setEdad] = useState("");
 
+    //Funcion para agregar un usuario
     const agregarUsuario = async () => {
         try {
             const docRef = await addDoc(collection(db, "usuarios"), {
