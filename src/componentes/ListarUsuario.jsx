@@ -47,14 +47,35 @@ function ListarUsuario() {
                     <li key={usuario.id}>
                         {editandoID == usuario.id ? (
                             <>
-                            
+                                <input 
+                                    type="text"
+                                    value={nombreEditado}
+                                    onChange={(e)=>setNombreEditado(e.target.value)} 
+                                />
+
+                                <input 
+                                    type="number"
+                                    value={edadEditada}
+                                    onChange={(e)=>setEdadEditada(e.target.value)} 
+                                />
+
+                                <button onClick={()=>editarUsuario(usuario.id)}>Guardar</button>
+                                <button onClick={()=>setEditandoID(null)}>Cancelar</button>
                             </>
                         ):(
                             <>
-                            
+                                {usuario.nombre} - {usuario.edad}
+
+                                <button 
+                                    onClick={()=>{
+                                        setEditandoID(usuario.id);
+                                        setNombreEditado(usuario.nombre);
+                                        setEdadEditada(usuario.edad);
+                                    }}
+                                    >Editar</button>
                             </>
                         )}
-                        {usuario.nombre} - {usuario.edad}
+                        
                     </li>
                 ))}
                 
