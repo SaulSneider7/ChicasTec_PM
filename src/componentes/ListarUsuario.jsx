@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { db } from "../firebase";
-import { collection, onSnapshot, doc, updateDoc } from "firebase/firestore";
+import { collection, onSnapshot, doc, updateDoc, deleteDoc  } from "firebase/firestore";
 
 function ListarUsuario() {
 
@@ -38,6 +38,12 @@ function ListarUsuario() {
         return () => ObtenerUsuarios();
     }, []);
 
+    //================================================
+    // Funcion para eliminar un usuario
+    //================================================
+    const eliminarUsuario = async (id) => {
+        await deleteDoc(doc(db, "usuarios", id));
+    }
 
     return(
         <div>
@@ -73,6 +79,12 @@ function ListarUsuario() {
                                         setEdadEditada(usuario.edad);
                                     }}
                                     >Editar</button>
+                                
+                                <button 
+                                    onClick={()=>eliminarUsuario(usuario.id)}
+                                >
+                                    Eliminar
+                                </button>
                             </>
                         )}
                         
