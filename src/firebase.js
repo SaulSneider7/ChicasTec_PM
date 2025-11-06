@@ -4,12 +4,12 @@ import { getFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyD27LRhe5AsQ1XR2K-CXG4IpGTSNNp2rW0",
-  authDomain: "fir-64-87eb3.firebaseapp.com",
-  projectId: "fir-64-87eb3",
-  storageBucket: "fir-64-87eb3.firebasestorage.app",
-  messagingSenderId: "1014876702129",
-  appId: "1:1014876702129:web:0105528407e6675252e990"
+  apiKey: "AIzaSyCAdFUPc_GHxCX-a8ecDRFFe_XRYH9-s0E",
+  authDomain: "chicas-tec-am.firebaseapp.com",
+  projectId: "chicas-tec-am",
+  storageBucket: "chicas-tec-am.firebasestorage.app",
+  messagingSenderId: "85027786061",
+  appId: "1:85027786061:web:7102a4ace730835c5cfb04"
 };
 
 const app = initializeApp(firebaseConfig);
